@@ -1,0 +1,3 @@
+# Test input for Task 08 safe stream parser
+# Intentionally contains bad token 'abc' followed by valid integer 9
+abc 9
