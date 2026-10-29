@@ -1,0 +1,11 @@
+# Binaries and compiled executables
+*.exe
+*.o
+*.obj
+*.dll
+*.out
+
+# System and temporary files
+.vscode/
+.idea/
+*.tmp
