@@ -1,0 +1,35 @@
+======================================================================
+SHALLOW COPY DOUBLE-FREE CRASH AUDIT REPORT
+======================================================================
+When the Prescription class was compiled and executed WITHOUT custom copy
+constructor and copy assignment operator (using compiler-generated shallow copy):
+
+Source Code:
+  Prescription p1(2);
+  p1.set(0, "Paracetamol");
+  p1.set(1, "ORS");
+  Prescription p2 = p1; // Shallow copy: p2.medicines == p1.medicines
+
+Execution Trace:
+  1. p1 allocates dynamic array at heap address: 0x1f749a21230
+  2. Compiler synthesizes shallow copy for p2:
+     p2.n = 2;
+     p2.medicines = 0x1f749a21230; // Direct pointer copy (Aliasing!)
+  3. Scope termination triggers destruction in reverse declaration order:
+     - p2.~Prescription() executes: delete[] 0x1f749a21230 (Heap memory freed)
+     - p1.~Prescription() executes: delete[] 0x1f749a21230 (DOUBLE DELETE!)
+
+Operating System / Sanitizer Diagnostic:
+  - Exit Code: 1 (Process abnormally aborted by OS)
+  - Windows UCRT Error: STATUS_HEAP_CORRUPTION (Exception 0xC0000374)
+  - AddressSanitizer (ASan) Diagnostic:
+    =================================================================
+    ==ERROR: AddressSanitizer: attempting double-free on 0x1f749a21230 in thread T0:
+        #0 0x7ff76a21 operator delete[](void*)
+        #1 0x7ff76a20 Prescription::~Prescription()
+    =================================================================
+
+Remediation:
+  Full adherence to the Rule of Three: Custom copy constructor, copy assignment
+  operator with self-assignment guard, and destructor.
+======================================================================
