@@ -1,5 +1,9 @@
 # DSA01: Object-Oriented Programming with C++
 
+> 🚀 **ASSIGNMENT 3 (CO3 / Assessment 3) SUBMISSION:**  
+> Complete implementation, benchmark evidence, memory diagrams, and evaluative reports for **Assignment 3 (Q1–Q7)** are located in the [**`Assignment3/`**](./Assignment3/) directory!  
+> 📖 Read the full [**Assignment 3 Evaluation Report (`Assignment3/README.md`)**](./Assignment3/README.md).
+
 > 🚀 **ASSIGNMENT 2 (CO2 / Assessment 2) SUBMISSION:**  
 > Complete implementation, benchmark evidence, compiler audit, and evaluative reports for **Assignment 2 (Q1–Q7)** are located in the [**`Assignment2/`**](./Assignment2/) directory!  
 > 📖 Read the full [**Assignment 2 Evaluation Report (`Assignment2/README.md`)**](./Assignment2/README.md).
