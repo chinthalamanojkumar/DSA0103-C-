@@ -1,3 +1,11 @@
+# DSA01: Object-Oriented Programming with C++
+
+> 🚀 **ASSIGNMENT 2 (CO2 / Assessment 2) SUBMISSION:**  
+> Complete implementation, benchmark evidence, compiler audit, and evaluative reports for **Assignment 2 (Q1–Q7)** are located in the [**`Assignment2/`**](./Assignment2/) directory!  
+> 📖 Read the full [**Assignment 2 Evaluation Report (`Assignment2/README.md`)**](./Assignment2/README.md).
+
+---
+
 # ASSIGNMENT 1: Design, Implement and Validate the Fare Logic of a City Metro Smart-Card System
 
 **Course Outcome:** CO1 — Apply object-oriented programming principles and C++ constructs such as data types, operators and control structures to design and write structured OOP-based programs.  
