@@ -35,7 +35,7 @@
 
 ```bash
 # Task 01: Class Design Review
-cd Assessment4/Task01
+cd Assignment4/Task01
 g++ -std=c++17 -Wall -Wextra -pedantic Task01_ClassDesignReview.cpp -o Task01.exe
 .\Task01.exe
 
